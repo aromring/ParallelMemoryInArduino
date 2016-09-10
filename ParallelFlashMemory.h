@@ -4,6 +4,8 @@
 //
 //  Created by Robert Fraczkiewicz on 7/17/16.
 //
+//  Copy this file into Arduino't libraries/ParallelFlashMemory folder
+//
 //
 
 #ifndef ParallelFlashMemory_h
