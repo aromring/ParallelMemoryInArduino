@@ -6,10 +6,17 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		E1FFCB4A1D3BFF4200BF173A /* ParallelFlashMemory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallelFlashMemory.h; sourceTree = "<group>"; };
+		E1FFCB4B1D3BFF6000BF173A /* ParallelFlashMemory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ParallelFlashMemory.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		E1FFCB431D3BFEF600BF173A = {
 			isa = PBXGroup;
 			children = (
+				E1FFCB4A1D3BFF4200BF173A /* ParallelFlashMemory.h */,
+				E1FFCB4B1D3BFF6000BF173A /* ParallelFlashMemory.cpp */,
 			);
 			sourceTree = "<group>";
 		};
