@@ -12,7 +12,10 @@
 #define ParallelFlashMemory_h
 
 #include <Arduino.h>
-#include "../Adafruit_MCP23008_RF/Adafruit_MCP23008_RF.h"
+#include "Adafruit_MCP23008.h"
+// WARNING: if the above include causes compilation conflicts in your Arduino software, then comment it out, make a local
+// copy of the Adafruit_MCP23008, rename it to Adafruit_MCP23008_RF, and uncomment the line below. Further details in Readme.md.
+// #include "../Adafruit_MCP23008_RF/Adafruit_MCP23008_RF.h"
 
 #define SIZE_OF_LONG    4   // Valid for Atmega328
 
@@ -31,7 +34,7 @@ private:
     uint32_t LastSector;    // Index of the last sector starting from 0
     uint32_t StartLastSector;   // Memory address of the first byte in the last sector counting from 0
     uint32_t EndLastSector;    // Memory address of the last byte in the last sector counting from 0
-    Adafruit_MCP23008_RF mcp;  // Object for an I/O extender over I2C
+    Adafruit_MCP23008 mcp;  // Object for an I/O extender over I2C
     // Functions
     void setAddress(uint32_t address);
     void setDataAndAddress(uint8_t data,uint32_t address);
