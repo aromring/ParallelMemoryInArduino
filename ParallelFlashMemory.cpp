@@ -4,11 +4,24 @@
 //
 //  Created by Robert Fraczkiewicz on 7/17/16.
 //
-//  Copy this file into Arduino't libraries/ParallelFlashMemory folder
+//  Copy this file into Arduino't libraries/ParallelFlashMemory folder.
+//  Requires Adafruit_MCP23008_RF library for I2C communication with
+//  the I/O Expander.
 //
 
 #include "ParallelFlashMemory.h"
 
+/* Arguments are, in order:
+ * lp = Pin connected to ST_CP/RCLK of 74HC595
+ * cp = Pin connected to SH_CP/SRCLK of 74HC595
+ * ap = Pin connected to DS/SER of 74HC595
+ * wep = Pin connected to WE# of SST39SF010A
+ * oep = Pin connected to OE# of SST39SF010A
+ * cep = Pin connected to CE# of SST39SF010A
+ * ss = Size of erasable sector in bytes
+ * ms = Total size of memory in bytes
+ * mcpadd = I2C address of the I/O extender MCP23008
+ */
 void ParallelFlashMemory::begin (uint8_t lp, uint8_t cp, uint8_t ap, uint8_t wep, uint8_t oep, uint8_t cep, uint32_t ss, uint32_t ms, uint8_t mcpadd)
 {
     latchPin=lp;
@@ -309,7 +322,7 @@ uint32_t ParallelFlashMemory::readFloatArrayAtAddress(float *a,uint32_t n,uint32
     return address;
 }
 
-
+// Print data byte and address bytes in binary
 void ParallelFlashMemory::printByteAndDistributedAddress(uint8_t data,uint32_t address)
 {
     Serial.print("Data: ");
@@ -322,6 +335,7 @@ void ParallelFlashMemory::printByteAndDistributedAddress(uint8_t data,uint32_t a
     Serial.println((address >> 16) & 0x1,BIN);
 }
 
+// Print contents of a given sector
 void ParallelFlashMemory::dumpSector(uint32_t sectorNum)
 {
     if(sectorNum>LastSector) return;

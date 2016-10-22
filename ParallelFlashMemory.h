@@ -4,8 +4,9 @@
 //
 //  Created by Robert Fraczkiewicz on 7/17/16.
 //
-//  Copy this file into Arduino't libraries/ParallelFlashMemory folder
-//
+//  Copy this file into Arduino't libraries/ParallelFlashMemory folder.
+//  Requires Adafruit_MCP23008_RF library for I2C communication with
+//  the I/O Expander.
 //
 
 #ifndef ParallelFlashMemory_h

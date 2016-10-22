@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		E14FB3041DBC1D1B00D9F471 /* Memory_SST39SF010A.ino */ = {isa = PBXFileReference; lastKnownFileType = text; path = Memory_SST39SF010A.ino; sourceTree = "<group>"; };
 		E16AF34D1DBB1D640077B09F /* Adafruit_MCP23008_RF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Adafruit_MCP23008_RF.cpp; path = ../Adafruit_MCP23008_RF/Adafruit_MCP23008_RF.cpp; sourceTree = "<group>"; };
 		E16AF34E1DBB1D640077B09F /* Adafruit_MCP23008_RF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Adafruit_MCP23008_RF.h; path = ../Adafruit_MCP23008_RF/Adafruit_MCP23008_RF.h; sourceTree = "<group>"; };
 		E1FFCB4A1D3BFF4200BF173A /* ParallelFlashMemory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallelFlashMemory.h; sourceTree = "<group>"; };
@@ -14,12 +15,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		E14FB3031DBC1D1B00D9F471 /* Memory_SST39SF010A */ = {
+			isa = PBXGroup;
+			children = (
+				E14FB3041DBC1D1B00D9F471 /* Memory_SST39SF010A.ino */,
+			);
+			path = Memory_SST39SF010A;
+			sourceTree = "<group>";
+		};
 		E1FFCB431D3BFEF600BF173A = {
 			isa = PBXGroup;
 			children = (
 				E16AF34D1DBB1D640077B09F /* Adafruit_MCP23008_RF.cpp */,
 				E16AF34E1DBB1D640077B09F /* Adafruit_MCP23008_RF.h */,
 				E1FFCB4A1D3BFF4200BF173A /* ParallelFlashMemory.h */,
+				E14FB3031DBC1D1B00D9F471 /* Memory_SST39SF010A */,
 				E1FFCB4B1D3BFF6000BF173A /* ParallelFlashMemory.cpp */,
 			);
 			sourceTree = "<group>";
