@@ -12,10 +12,7 @@
 #define ParallelFlashMemory_h
 
 #include <Arduino.h>
-#include "Adafruit_MCP23008.h"
-// WARNING: if the above include causes compilation conflicts in your Arduino software, then comment it out, make a local
-// copy of the Adafruit_MCP23008, rename it to Adafruit_MCP23008_RF, and uncomment the line below. Further details in Readme.md.
-// #include "../Adafruit_MCP23008_RF/Adafruit_MCP23008_RF.h"
+#include "Adafruit_MCP23008_RF.h"
 
 #define SIZE_OF_LONG    4   // Valid for Atmega328
 
@@ -24,7 +21,7 @@ private:
     // Data members
     uint8_t latchPin;   //Pin connected to ST_CP/RCLK of 74HC595
     uint8_t clockPin;   //Pin connected to SH_CP/SRCLK of 74HC595
-    uint8_t addressPin; //Pin connected to DS of 74HC595
+    uint8_t addressPin; //Pin connected to DS/SER of 74HC595
     uint8_t wePin;  // Pin connected to WE# of SST39SF010A
     uint8_t oePin;  // Pin connected to OE# of SST39SF010A
     uint8_t cePin;  // Pin connected to CE# of SST39SF010A
@@ -34,7 +31,7 @@ private:
     uint32_t LastSector;    // Index of the last sector starting from 0
     uint32_t StartLastSector;   // Memory address of the first byte in the last sector counting from 0
     uint32_t EndLastSector;    // Memory address of the last byte in the last sector counting from 0
-    Adafruit_MCP23008 mcp;  // Object for an I/O extender over I2C
+    Adafruit_MCP23008_RF mcp;  // Object for an I/O extender over I2C
     // Functions
     void setAddress(uint32_t address);
     void setDataAndAddress(uint8_t data,uint32_t address);
@@ -42,6 +39,17 @@ private:
     uint8_t readByteAtAddress(uint32_t address);
 public:
     // Setup
+    /* Arguments are, in order:
+     * lp = Pin connected to ST_CP/RCLK of 74HC595
+     * cp = Pin connected to SH_CP/SRCLK of 74HC595
+     * ap = Pin connected to DS/SER of 74HC595
+     * wep = Pin connected to WE# of SST39SF010A
+     * oep = Pin connected to OE# of SST39SF010A
+     * cep = Pin connected to CE# of SST39SF010A
+     * ss = Size of erasable sector in bytes
+     * ms = Total size of memory in bytes
+     * mcpadd = I2C address of the I/O extender MCP23008
+     */
     void begin(uint8_t lp, uint8_t cp, uint8_t ap, uint8_t wep, uint8_t oep, uint8_t cep, uint32_t ss, uint32_t ms,  uint8_t mcpadd);
     // Erase
     void chipErase();
