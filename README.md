@@ -4,5 +4,4 @@ This is a small library handling a parallel flash memory chip, SST39SF010A from 
 
 Since this hardware implementation uses the MCP23008 I/O expander from Adafruit [https://www.adafruit.com/products/593] you  will have to download and install to your Arduino folder the associated library, Adafruit_MCP23008_RF, which is here: https://github.com/aromring/Adafruit_MCP23008_RF. 
 
-This repository also inlcudes an Arduino sketch "Memory_SST39SF010A.ino" illustrating the library use. In short, the sketch reads previously written data consisting of an 20x4 array of random floats, generates and saves on the chip a new such array, and stops. The numbers are written to the Serial Monitor. The sketch has been tested with ATmega328 and ATmega2560.
-
+This repository also inlcudes an Arduino sketch "Memory_SST39SF010A.ino" illustrating the library use. In short, the sketch reads previously written data consisting of an 20x4 array of random floats, generates and saves on the chip a new such array, and stops. The numbers are written to the Serial Monitor. The sketch has been tested with ATmega328 and ATmega2560. Please see the following Instructable for more details: http://www.instructables.com/id/How-to-Add-Parallel-Flash-Memory-to-Arduino/
